@@ -1,73 +1,75 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f5fb;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5fb;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+/* ---------- Navbar ---------- */
 .navbar {
-    background-color: #0a2a63;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-    height: 90px;
+  background-color: #0a2a63;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  height: 90px;
 }
 
 .brand a {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .nav-links {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .nav-links a {
-    color: #cbd5e1;
-    font-size: 14px;
-    font-weight: 600;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .login {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .btn-get-started {
-    background-color: #1f6bff;
-    color: #ffffff;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
+  background-color: #1f6bff;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .btn-get-started:hover {
-    background-color: #1555d6;
+  background-color: #1555d6;
 }
 
+/* ---------- Banner and search bar ---------- */
 .banner {
   height: 420px;
   background-image:
@@ -135,6 +137,7 @@ a {
   background: #1555d6;
 }
 
+/* ---------- Listings section ---------- */
 .listings {
   max-width: 1200px;
   margin: 0 auto;
@@ -173,8 +176,7 @@ a {
   color: white;
 }
 
-grid-template-columns: repeat(4, 1fr);
-
+/* ---------- Property grid and cards ---------- */
 .property-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -221,17 +223,24 @@ grid-template-columns: repeat(4, 1fr);
 
 .heart-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50%;
   background: white;
   color: #e11d48;
-  font-size: 18px;
+  font-size: 24px;
+  line-height: 1;
   cursor: pointer;
   z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.heart-btn:hover {
+  background: #e11d48;
+  color: white;
 }
 
 .card-body {
@@ -272,18 +281,40 @@ grid-template-columns: repeat(4, 1fr);
   color: #374151;
 }
 
-  .listings-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
+/* ---------- Card buttons ---------- */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
 
-  .property-grid {
-    grid-template-columns: 1fr;
-  }
+.card-actions button {
+  flex: 1;
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  @media (max-width: 1024px) {
-  .property-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.btn-fav {
+  background: white;
+  color: #e11d48;
+  border: 1px solid #e11d48;
+}
+
+.btn-fav:hover {
+  background: #e11d48;
+  color: white;
+}
+
+.btn-book {
+  background: #1f6bff;
+  color: white;
+  border: 1px solid #1f6bff;
+}
+
+.btn-book:hover {
+  background: #1555d6;
 }
