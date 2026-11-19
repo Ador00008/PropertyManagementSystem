@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renter Dashboard</title>
+  <link rel="stylesheet" href="renter.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="inner">
+      <p class="tag">RENTER PANEL</p>
+      <h1>Welcome back, Renter</h1>
+      <p>Browse homes, save the ones you like and book a visit with the owner.</p>
+    </div>
+  </header>
+
+  <nav class="topnav">
+    <div class="inner">
+      <button id="tab-properties" onclick="showSection('properties')">Properties</button>
+      <button id="tab-favorites" onclick="showSection('favorites')">My Favorites</button>
+      <button id="tab-book" onclick="showSection('book')">Book Appointment</button>
+      <button id="tab-appointments" onclick="showSection('appointments')">My Appointments</button>
+      <a href="login.html" class="logout">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="stats">
+      <div class="stat-box purple" onclick="showSection('favorites')">
+        <p class="stat-label">Favorites</p>
+        <span id="favCount">0</span>
+        <p class="stat-text">Homes you have saved</p>
+      </div>
+      <div class="stat-box blue" onclick="showSection('appointments'); filterStatus('All')">
+        <p class="stat-label">Appointments</p>
+        <span id="apptCount">0</span>
+        <p class="stat-text">All your visit requests</p>
+      </div>
+      <div class="stat-box orange" onclick="showSection('appointments'); filterStatus('Pending')">
+        <p class="stat-label">Pending</p>
+        <span id="pendingCount">0</span>
+        <p class="stat-text">Waiting for the owner</p>
+      </div>
+    </div>
+
+    <section id="properties">
+      <h2>Available Properties</h2>
+      <p class="intro">Search by name or area, choose your budget, then save a home or book a visit.</p>
+      <div class="filters">
+        <input type="text" id="search" placeholder="Search by name or location"
+               onkeyup="showProperties()">
+        <select id="maxRent" onchange="showProperties()">
+          <option value="all">Any rent</option>
+          <option value="10000">Up to 10000 Tk</option>
+          <option value="20000">Up to 20000 Tk</option>
+          <option value="30000">Up to 30000 Tk</option>
+        </select>
+      </div>
+      <p id="resultCount" class="hint"></p>
+      <div id="propertyList" class="property-list"></div>
+    </section>
+
+    <section id="favorites">
+      <h2>My Favorites</h2>
+      <p class="intro">Homes you saved. Book a visit or remove them from your list.</p>
+      <div id="favList"></div>
+    </section>
+
+    <section id="book">
+      <h2>Book an Appointment</h2>
+      <p class="intro">Pick a property, a date and a time slot. You can add a note for the owner.</p>
+
+      <div class="book-layout">
+        <form onsubmit="return bookAppointment()">
+          <fieldset>
+            <legend>Appointment Details</legend>
+            <table class="form-table">
+              <tr>
+                <td><label for="property">Property</label></td>
+                <td><select id="property" name="property"></select></td>
+              </tr>
+              <tr>
+                <td><label for="date">Date</label></td>
+                <td><input type="date" id="date" name="date"></td>
+              </tr>
+              <tr>
+                <td><label for="time">Time</label></td>
+                <td>
+                  <select id="time" name="time">
+                    <option value="">-- Select Time --</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="note">Note</label></td>
+                <td>
+                  <textarea id="note" name="note" rows="3" cols="30"
+                            placeholder="Write a note (optional)"
+                            onkeyup="countNote()"></textarea>
+                  <p id="noteCount" class="hint">0 / 100 characters</p>
+                </td>
+              </tr>
+            </table>
+            <p id="formMsg" class="message"></p>
+            <input type="submit" value="Book Appointment" class="btn">
+            <input type="reset" value="Clear" class="btn clear" onclick="clearForm()">
+          </fieldset>
+        </form>
+
+        <div class="info-box">
+          <h3>How it works</h3>
+          <ol>
+            <li>Choose a property from the list.</li>
+            <li>Pick a date and a time slot.</li>
+            <li>Your request goes to the owner as <strong>Pending</strong>.</li>
+            <li>Check <strong>My Appointments</strong> to see if it is approved.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="appointments">
+      <h2>My Appointments</h2>
+      <p class="intro">Track your visit requests. The owner updates the status after checking them.</p>
+      <p class="legend">
+        <span class="status pending">Pending</span> waiting for owner
+        <span class="status approved">Approved</span> visit confirmed
+        <span class="status rejected">Rejected</span> owner declined
+      </p>
+      <div class="filter-buttons">
+        <button id="filter-All" onclick="filterStatus('All')">All</button>
+        <button id="filter-Pending" onclick="filterStatus('Pending')">Pending</button>
+        <button id="filter-Approved" onclick="filterStatus('Approved')">Approved</button>
+        <button id="filter-Rejected" onclick="filterStatus('Rejected')">Rejected</button>
+      </div>
+      <table class="appt-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Note</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="apptBody"></tbody>
+      </table>
+      <p id="noAppt" class="hint"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>2026 Rental Management System · Renter Panel</p>
+  </footer>
+
+  <script src="renter.js"></script>
+</body>
+</html>
