@@ -21,10 +21,51 @@
         <a href="index.html" class="login">Login</a>
         <a href="register.html" class="btn-get-started">Get Started</a>
         </div>
-        
+
     </header>
     <main>
-        
+        <section class="banner">
+            <form class="search-bar">
+        <div class="search-field">
+    <label for="want-to">Want to</label>
+    <select id="want-to">
+      <option value="rent">Rent</option>
+      <option value="buy">Buy</option>
+    </select>
+  </div>
+
+  <div class="search-field">
+    <label for="property-type">Property type</label>
+    <select id="property-type">
+      <option value="any">Any</option>
+      <option value="apartment">Apartment</option>
+      <option value="house">House</option>
+      <option value="studio">Studio</option>
+    </select>
+  </div>
+
+  <div class="search-field">
+    <label for="location">Location</label>
+    <input type="text" id="location" placeholder="Street, City, Zip...">
+  </div>
+
+  <button type="submit" class="search-btn">Search</button>
+</form>
+        </section>
+
+        <section class="listings">
+  <div class="listings-header">
+    <div>
+      <h2>Best home in your city</h2>
+      <p>Find rental homes that match your budget and lifestyle.</p>
+    </div>
+    <a href="#" class="btn-explore">Explore more ↗</a>
+  </div>
+
+  <div class="property-grid" id="property-grid"></div>
+</section>
     </main>
+    <script src="property.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>

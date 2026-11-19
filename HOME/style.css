@@ -67,3 +67,223 @@ a {
 .btn-get-started:hover {
     background-color: #1555d6;
 }
+
+.banner {
+  height: 420px;
+  background-image:
+    linear-gradient(rgba(10, 42, 99, 0.6), rgba(10, 42, 99, 0.6)),
+    url("image/building.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.search-bar {
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.search-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.search-field:last-of-type {
+  border-right: none;
+}
+
+.search-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a2a63;
+  margin-bottom: 6px;
+}
+
+.search-field select,
+.search-field input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.search-btn {
+  background: #1f6bff;
+  color: white;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #1555d6;
+}
+
+.listings {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.listings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.listings-header h2 {
+  font-size: 32px;
+  color: #0a2a63;
+  margin-bottom: 8px;
+}
+
+.listings-header p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.btn-explore {
+  border: 1px solid #0a2a63;
+  color: #0a2a63;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-explore:hover {
+  background: #0a2a63;
+  color: white;
+}
+
+grid-template-columns: repeat(4, 1fr);
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-link {
+  display: block;
+  color: inherit;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge-new {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #14d6c4;
+  color: #0a2a63;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #e11d48;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-price {
+  font-size: 20px;
+  color: #0a2a63;
+  margin-bottom: 8px;
+}
+
+.card-price span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.card-location {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 14px;
+  font-size: 13px;
+  color: #374151;
+}
+
+  .listings-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 1024px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
