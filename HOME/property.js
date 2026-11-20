@@ -10,9 +10,10 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/1.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 2,
     title: "Luxury Duplex House",
     location: "Gulshan, Dhaka",
@@ -23,9 +24,10 @@ const properties = [
     area: 2600,
     isNew: false,
     image: "image/2.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 3,
     title: "Cozy Studio Flat",
     location: "Dhanmondi, Dhaka",
@@ -36,9 +38,10 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/3.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 4,
     title: "Green View Apartment",
     location: "Dhanmondi, Dhaka",
@@ -49,9 +52,10 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/4.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 5,
     title: "Spacious Corner House",
     location: "Dhanmondi, Dhaka",
@@ -62,9 +66,9 @@ const properties = [
     area: 2600,
     isNew: true,
     image: "image/5.jpg",
-    description: "A bright, well-ventilated house close to schools and shops."
+    description: "A bright, well-ventilated house close to schools and shops.",
   },
-    {
+  {
     id: 6,
     title: "Modern Family Apartment",
     location: "Dhanmondi, Dhaka",
@@ -75,9 +79,10 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/6.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 7,
     title: "Modern Family Apartment",
     location: "Dhanmondi, Dhaka",
@@ -88,9 +93,10 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/7.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
   },
-    {
+  {
     id: 8,
     title: "Modern Family Apartment",
     location: "Dhanmondi, Dhaka",
@@ -101,6 +107,7 @@ const properties = [
     area: 1430,
     isNew: true,
     image: "image/8.jpg",
-    description: "A bright, well-ventilated apartment close to schools and shops."
-  }
+    description:
+      "A bright, well-ventilated apartment close to schools and shops.",
+  },
 ];

@@ -1,9 +1,9 @@
 function renderProperties(list) {
-    const grid = document.getElementById("property-grid");
-    let html = "";
+  const grid = document.getElementById("property-grid");
+  let html = "";
 
-    list.forEach(function (p) {
-        html += `
+  list.forEach(function (p) {
+    html += `
             <div class="card">
                 ${p.isNew ? '<span class="badge-new">New</span>' : ""}
                 <button class="heart-btn" data-id="${p.id}">♡</button>
@@ -22,17 +22,17 @@ function renderProperties(list) {
                 </a>
             </div>
         `;
-    });
+  });
 
-    grid.innerHTML = html;
+  grid.innerHTML = html;
 }
 
 renderProperties(properties);
 
 document.addEventListener("click", function (e) {
-    const favBtn = e.target.closest(".btn-fav, .heart-btn");
+  const favBtn = e.target.closest(".btn-fav, .heart-btn");
 
-    if (favBtn) {
-        // Favorite button functionality
-    }
+  if (favBtn) {
+    // Favorite button functionality
+  }
 });

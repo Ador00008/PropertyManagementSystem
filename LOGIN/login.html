@@ -1,41 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Property Management System</title>
-  <link rel="stylesheet" href="login.css">
-</head>
-<body class="login-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Property Management System</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body class="login-page">
+    <div class="login-box">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to continue</p>
 
-  <div class="login-box">
-    <h1>Welcome back</h1>
-    <p class="subtitle">Log in to continue</p>
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your username"
+          required
+        />
 
-    <form id="login-form">
-      <label for="username">Username</label>
-      <input type="text" id="username" placeholder="Enter your username" required>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
 
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" required>
+        <label for="role">Login as</label>
+        <select id="role" required>
+          <option value="" disabled selected>Select role</option>
+          <option value="renter">Renter</option>
+          <option value="owner">Owner</option>
+          <option value="admin">Admin</option>
+        </select>
 
-      <label for="role">Login as</label>
-      <select id="role" required>
-        <option value="" disabled selected>Select role</option>
-        <option value="renter">Renter</option>
-        <option value="owner">Owner</option>
-        <option value="admin">Admin</option>
-      </select>
+        <button type="submit">Login</button>
+      </form>
 
-      <button type="submit">Login</button>
-    </form>
+      <p class="bottom-text">
+        Don't have an account? <a href="register.html">Register</a>
+      </p>
+      <p class="bottom-text"><a href="home.html">← Back to home</a></p>
+    </div>
 
-    <p class="bottom-text">
-      Don't have an account? <a href="register.html">Register</a>
-    </p>
-    <p class="bottom-text"><a href="home.html">← Back to home</a></p>
-  </div>
-
-  <script src="login.js"></script>
-</body>
+    <script src="login.js"></script>
+  </body>
 </html>

@@ -12,10 +12,11 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   const rolePages = {
     renter: "../renter.html",
     owner: "../owner.html",
-    admin: "../admin.html"
+    admin: "../admin.html",
   };
 
-  const safeRedirect = redirect && !redirect.includes(":") && !redirect.includes("//");
+  const safeRedirect =
+    redirect && !redirect.includes(":") && !redirect.includes("//");
 
   if (safeRedirect) {
     window.location.href = redirect;
