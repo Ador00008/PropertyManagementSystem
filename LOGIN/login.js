@@ -11,7 +11,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
 
   const rolePages = {
     renter: "../renter.html",
-    owner: "../owner.html",
+    owner: "../OWNER/owner.html",
     admin: "../admin.html",
   };
 

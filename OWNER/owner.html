@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard | PropertyHub</title>
+
+    <!-- Owner CSS only -->
+    <link rel="stylesheet" href="owner.css">
+</head>
+
+<body class="owner-page">
+
+    <!-- =================================
+         OWNER SIDEBAR
+    ================================== -->
+
+    <aside class="owner-sidebar">
+
+        <div class="owner-brand">
+            <h2>PropertyHub</h2>
+            <p>Owner Panel</p>
+        </div>
+
+        <nav class="owner-navigation">
+
+            <button class="owner-nav-link owner-active"
+                onclick="ownerShowSection('owner-dashboard')">
+                <span>📊</span> Dashboard
+            </button>
+
+            <button class="owner-nav-link"
+                onclick="ownerShowSection('owner-add-property')">
+                <span>➕</span> Add Property
+            </button>
+
+            <button class="owner-nav-link"
+                onclick="ownerShowSection('owner-my-properties')">
+                <span>🏠</span> My Properties
+            </button>
+
+            <button class="owner-nav-link"
+                onclick="ownerShowSection('owner-appointments')">
+                <span>📅</span> Appointments
+            </button>
+
+        </nav>
+
+        <div class="owner-sidebar-bottom">
+            <a href="../LOGIN/login.html" class="owner-logout">
+                🚪 Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- =================================
+         OWNER MAIN CONTENT
+    ================================== -->
+
+    <main class="owner-main">
+
+        <!-- Top Navbar -->
+
+        <header class="owner-navbar">
+
+            <div>
+                <h1>Owner Dashboard</h1>
+                <p>Manage your properties and appointments</p>
+            </div>
+
+            <div class="owner-profile">
+                <div class="owner-avatar">O</div>
+
+                <div>
+                    <h3 id="owner-user-name">Owner</h3>
+                    <p>Property Owner</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- =================================
+             SECTION 1: DASHBOARD
+        ================================== -->
+
+        <section id="owner-dashboard" class="owner-section owner-section-active">
+
+            <div class="owner-section-heading">
+                <h2>Dashboard Overview</h2>
+                <p>Welcome to your property management dashboard.</p>
+            </div>
+
+
+            <!-- Statistics Cards -->
+
+            <div class="owner-stats-grid">
+
+                <div class="owner-stat-card">
+                    <div class="owner-stat-icon">🏠</div>
+                    <div>
+                        <p>Total Properties</p>
+                        <h2 id="owner-total-properties">0</h2>
+                    </div>
+                </div>
+
+                <div class="owner-stat-card">
+                    <div class="owner-stat-icon">📅</div>
+                    <div>
+                        <p>Total Appointments</p>
+                        <h2 id="owner-total-appointments">0</h2>
+                    </div>
+                </div>
+
+                <div class="owner-stat-card">
+                    <div class="owner-stat-icon">⏳</div>
+                    <div>
+                        <p>Pending Requests</p>
+                        <h2 id="owner-pending-appointments">0</h2>
+                    </div>
+                </div>
+
+                <div class="owner-stat-card">
+                    <div class="owner-stat-icon">✓</div>
+                    <div>
+                        <p>Approved Requests</p>
+                        <h2 id="owner-approved-appointments">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Recent Properties -->
+
+            <div class="owner-content-card">
+
+                <div class="owner-card-heading">
+                    <h2>My Recent Properties</h2>
+
+                    <button class="owner-primary-btn"
+                        onclick="ownerShowSection('owner-add-property')">
+                        + Add Property
+                    </button>
+                </div>
+
+                <div id="owner-recent-properties" class="owner-recent-list">
+
+                    <p class="owner-empty-message">
+                        No properties added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SECTION 2: ADD PROPERTY
+        ================================== -->
+
+        <section id="owner-add-property" class="owner-section">
+
+            <div class="owner-section-heading">
+                <h2>Add New Property</h2>
+                <p>Enter your property details below.</p>
+            </div>
+
+
+            <div class="owner-content-card">
+
+                <form id="owner-property-form">
+
+                    <div class="owner-form-grid">
+
+                        <!-- Property Title -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-title">
+                                Property Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="owner-property-title"
+                                placeholder="Enter property name"
+                                required>
+                        </div>
+
+
+                        <!-- Location -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-location">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="owner-property-location"
+                                placeholder="e.g. Dhanmondi, Dhaka"
+                                required>
+                        </div>
+
+
+                        <!-- Property Type -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-type">
+                                Property Type
+                            </label>
+
+                            <select id="owner-property-type" required>
+                                <option value="">Select property type</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                                <option value="villa">Villa</option>
+                                <option value="room">Room</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Monthly Rent -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-price">
+                                Monthly Rent (Tk)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="owner-property-price"
+                                placeholder="Enter monthly rent"
+                                min="1"
+                                required>
+                        </div>
+
+
+                        <!-- Bedrooms -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-beds">
+                                Bedrooms
+                            </label>
+
+                            <input
+                                type="number"
+                                id="owner-property-beds"
+                                placeholder="Number of bedrooms"
+                                min="0"
+                                required>
+                        </div>
+
+
+                        <!-- Bathrooms -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-baths">
+                                Bathrooms
+                            </label>
+
+                            <input
+                                type="number"
+                                id="owner-property-baths"
+                                placeholder="Number of bathrooms"
+                                min="0"
+                                required>
+                        </div>
+
+
+                        <!-- Area -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-area">
+                                Area (sqft)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="owner-property-area"
+                                placeholder="Enter area in sqft"
+                                min="1"
+                                required>
+                        </div>
+
+
+                        <!-- Property Image -->
+
+                        <div class="owner-form-group">
+                            <label for="owner-property-image">
+                                Property Image URL
+                            </label>
+
+                            <input
+                                type="text"
+                                id="owner-property-image"
+                                placeholder="Enter image URL (optional)">
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="owner-form-group owner-full-width">
+                            <label for="owner-property-description">
+                                Property Description
+                            </label>
+
+                            <textarea
+                                id="owner-property-description"
+                                rows="4"
+                                placeholder="Describe your property..."></textarea>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Buttons -->
+
+                    <div class="owner-form-actions">
+
+                        <button type="reset" class="owner-secondary-btn">
+                            Clear Form
+                        </button>
+
+                        <button type="submit" class="owner-primary-btn"
+                            id="owner-submit-btn">
+                            Add Property
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SECTION 3: MY PROPERTIES
+        ================================== -->
+
+        <section id="owner-my-properties" class="owner-section">
+
+            <div class="owner-section-heading">
+                <h2>My Properties</h2>
+                <p>View, edit and delete your listed properties.</p>
+            </div>
+
+
+            <!-- Property List -->
+
+            <div id="owner-property-list" class="owner-property-grid">
+
+                <p class="owner-empty-message">
+                    No properties available. Add your first property.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SECTION 4: APPOINTMENTS
+        ================================== -->
+
+        <section id="owner-appointments" class="owner-section">
+
+            <div class="owner-section-heading">
+                <h2>Appointment Requests</h2>
+                <p>Manage appointment requests from renters.</p>
+            </div>
+
+
+            <div class="owner-content-card">
+
+                <div class="owner-table-wrapper">
+
+                    <table class="owner-appointment-table">
+
+                        <thead>
+                            <tr>
+                                <th>Renter</th>
+                                <th>Property</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Note</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="owner-appointment-body">
+
+                            <tr>
+                                <td colspan="7" class="owner-empty-message">
+                                    No appointment requests available.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Owner JavaScript only -->
+    <script src="owner.js"></script>
+
+</body>
+
+</html>
